@@ -32,8 +32,9 @@ $ install instructions
 
 ## Built By
 
-Mack Cooper | @mackkcooper
-Carissa Allen | @carissaallen 
+Mack Cooper | [@mackkcooper](https://github.com/mackkcooper)
+
+Carissa Allen | [@carissaallen](https://github.com/carissaallen)
 
 ## License
 Distributed under the MIT License. See [LICENSE](/LICENSE) for more information.
