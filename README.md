@@ -33,7 +33,7 @@ $ install instructions
 ## Contribute
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/terminal-based-games/ouroboros/issues)
 
-Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) to our open source project before getting started. 
+Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
 
 ## Testing
 
