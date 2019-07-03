@@ -31,7 +31,7 @@ _A demo or prototype should be completed by July 9, 2019._
 
 | Deadline | Event | Description |
 | --- | --- | --- |
-| 07/02/19 | Research + Discovery | Finalize open source project goal and discuss scope. |
+| 07/02/19 | Research | Finalize open source project goal and discuss scope. |
 | 07/06/19 | Design | High-level design, flow charts, and structure for prototype. |
 | 07/09/19 | Demo | Deliver a prototype. |
 | 07/23/19 | Sprint | Develop minimum viable product ("MVP"). |
