@@ -1,7 +1,10 @@
 # OpenOuroboros
 > A terminal-based game inspired by Snake.
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.com/terminal-based-games/ouroboros.svg?branch=master)](https://travis-ci.com/terminal-based-games/ouroboros)
+[![HitCount](http://hits.dwyl.com/terminal-based-games/ouroboros.svg)](http://hits.dwyl.com/terminal-based-games/ouroboros)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/terminal-based-games/ouroboros/issues)
+
 
 "Snake" is a game that was preloaded on Nokia phones in 1997. A single player controls a square, which continually grows as it moves, resembling a snake. The objective of the game is to get the snake to eat items (by running into food objects) without running into the border of the screen, any obstacles, or itself. 
 
