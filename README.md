@@ -29,6 +29,16 @@ _A demo or prototype should be completed by July 9, 2019._
 
 ## Roadmap 
 
+| Deadline | Event | Description |
+| --- | --- | --- |
+| 07/02/19 | Research + Discovery | Finalize open source project goal and discuss scope. |
+| 07/06/19 | Design | High-level design, flow charts, and structure for prototype. |
+| 07/09/19 | Demo | Deliver a prototype. |
+| 07/23/19 | Sprint | Develop minimum viable product ("MVP"). |
+| 07/30/19 | Test | Conduct QA and testing. |
+| 08/01/19 | Deploy | Deploy MVP to production. |
+| 08/13/19 | Sprint | Fix bugs, improve UX, polish final product. |
+
 ### MVP
 Our minimum viable product is a functional terminal-based game of Snake. This will be a single player game that can run on Mac OS X.
 
