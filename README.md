@@ -1,6 +1,8 @@
 # OpenOuroboros
 > A terminal-based game inspired by Snake.
 
+[![Build Status][travis-image]][travis-url]
+
 "Snake" is a game that was preloaded on Nokia phones in 1997. A single player controls a square, which continually grows as it moves, resembling a snake. The objective of the game is to get the snake to eat items (by running into food objects) without running into the border of the screen, any obstacles, or itself. 
 
 ## Installation
