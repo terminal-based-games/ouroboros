@@ -18,17 +18,24 @@ Windows:
 $ install instructions
 ```
 
-## How to Play
+## Play
 
 ## Demo
+_A demo or prototype should be completed by July 9, 2019._
 
 ## Technology
 
 * Python 3.7
 
-## Features
+## Roadmap 
+
+### MVP
+Our minimum viable product is a functional terminal-based game of Snake. This will be a single player game that can run on Mac OS X.
 
 ## Future Work
+* 2-player mode
+* AI players
+* High-score leaderboard
 
 ## Contribute
 
