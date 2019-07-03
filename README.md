@@ -33,11 +33,7 @@ $ install instructions
 ## Contribute
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/terminal-based-games/ouroboros/issues)
 
-1. Fork it (<https://github.com/terminal-based-games/ouroboros/>)
-2. Create your feature branch (`git checkout -b feature/feature-description`)
-3. Commit your changes (`git commit -am 'Great description of change'`)
-4. Push to the branch (`git push origin feature/feature-description`)
-5. When you're ready for a code review, open a new Pull Request. 
+Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) to our open source project before getting started. 
 
 ## Testing
 
