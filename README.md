@@ -22,16 +22,15 @@ $ install instructions
 
 ## Demo
 
-## Code Style
-
 ## Technology
+
+* Python 3.7
 
 ## Features
 
 ## Future Work
 
 ## Contribute
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/terminal-based-games/ouroboros/issues)
 
 Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
 
