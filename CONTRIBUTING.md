@@ -1,6 +1,6 @@
 # Contributing to OpenOuroboros
 
-:tada: Thank you for taking the time to contribute! :tada:
+:tada:Thank you for taking the time to contribute! :tada:
 
 ## Some ground rules and expectations.
 _Our ground rules and expectations are adapted from [opensource.guide](https://github.com/github/opensource.guide/blob/master/CONTRIBUTING.md)._
