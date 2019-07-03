@@ -32,7 +32,7 @@ Feel free to include any questions you have for the maintainer--we are happy to 
 
 ### Celebrate
 
-Once your pull request is merged, celebrate your success!
+Once your pull request is merged, celebrate your success! :dancers:
 
 ## Some styling requirements.
 
