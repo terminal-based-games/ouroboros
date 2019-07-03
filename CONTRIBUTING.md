@@ -1,5 +1,7 @@
 # Contributing to OpenOuroboros
 
+:tada: Thank you for taking the time to contribute! :tada:
+
 ## Some ground rules and expectations.
 _Our ground rules and expectations are adapted from [opensource.guide](https://github.com/github/opensource.guide/blob/master/CONTRIBUTING.md)._
 
@@ -18,7 +20,7 @@ Before we get started, here are a few things we expect from you (and that you sh
 3. Clone the repository to your local machine using `git clone`.
 4. Create a new branch for your fix or feature using `git checkout -b feature/branch-name-here`.
 5. Commit all your changes, pushing them to the remote repository using `git push origin feature/branch-name-here`.
-6. Once you're ready for a code review, open a Pull Request.
+6. Once you're ready for a code review, open a pull request.
 
 ### Pull request
 
@@ -43,8 +45,8 @@ _Our guide for written content is borrowed from [opensource.guide](https://githu
 
 All written content should follow these principles:
 
-* *Approachability*: Don't assume reader has prior knowledge
-* *Brevity*: Keep it simple, link to outside content for deeper dives
-* *Curation*: Amplify community best practices vs. any individual's point of view
+* **Approachability**: Don't assume reader has prior knowledge
+* **Brevity**: Keep it simple, link to outside content for deeper dives
+* **Curation**: Amplify community best practices vs. any individual's point of view
 
 Content should maintain a light-hearted, but wise (think classy, not overly excited) tone. Open source is fun! Readers should feel inspired, not discouraged, by the tone of your writing, and they should trust you to help them get started.
