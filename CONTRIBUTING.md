@@ -17,7 +17,7 @@ Before we get started, here are a few things we expect from you (and that you sh
 
 1. Find an issue you are interested in addressing, or brainstorm a feature you would like to add.
 2. Fork this repository.
-3. Clone the repository to your local machine using `git clone`.
+3. Clone the forked repository to your local machine using `git clone`.
 4. Create a new branch for your fix or feature using `git checkout -b feature/branch-name-here`.
 5. Commit all your changes, pushing them to the remote repository using `git push origin feature/branch-name-here`.
 6. Once you're ready for a code review, open a pull request.
