@@ -13,7 +13,7 @@ OS X & Linux:
 $ pip3 install -r requirements.txt
 $ git clone https://github.com/terminal-based-games/ouroboros.git
 $ cd ouroboros
-$ python ouroboros.py
+$ python3 ouroboros.py
 ```
 
 Windows:
@@ -21,7 +21,7 @@ Windows:
 $ pip3 install -r requirements.txt
 $ git clone https://github.com/terminal-based-games/ouroboros.git
 $ cd ouroboros
-$ python ouroboros.py
+$ python3 ouroboros.py
 ```
 
 ## Play
@@ -58,6 +58,12 @@ Our minimum viable product is a functional terminal-based game of Snake. This wi
 Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
 
 ## Testing
+
+To run all unit tests, you can enter the following command:
+
+```
+pytest
+```
 
 ## Credits
 
