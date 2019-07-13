@@ -10,6 +10,7 @@
 
 OS X & Linux:
 ```sh
+$ pip3 install -r requirements.txt
 $ git clone https://github.com/terminal-based-games/ouroboros.git
 $ cd ouroboros
 $ python ouroboros.py
@@ -17,6 +18,7 @@ $ python ouroboros.py
 
 Windows:
 ```sh
+$ pip3 install -r requirements.txt
 $ git clone https://github.com/terminal-based-games/ouroboros.git
 $ cd ouroboros
 $ python ouroboros.py
