@@ -10,12 +10,16 @@
 
 OS X & Linux:
 ```sh
-$ install instructions
+$ git clone https://github.com/terminal-based-games/ouroboros.git
+$ cd ouroboros
+$ python ouroboros.py
 ```
 
 Windows:
 ```sh
-$ install instructions
+$ git clone https://github.com/terminal-based-games/ouroboros.git
+$ cd ouroboros
+$ python ouroboros.py
 ```
 
 ## Play
