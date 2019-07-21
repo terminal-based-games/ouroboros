@@ -3,13 +3,12 @@
 import curses
 
 
-"""
-Responsible for where the snake is located on the game board, 
-and which direction it is moving.
-"""
-
-
 class Snake:
+    """
+    Responsible for where the snake is located on the game board, 
+    and which direction it is moving.
+    """
+
     def __init__(self, body, direction):
         """Initializes the snake."""
         self.body = body
@@ -32,23 +31,18 @@ class Snake:
         return self.body[-1]
 
 
-"""
-Responsible for storing an apple's location on the game board.
-"""
-
-
 class Apple:
+    """Responsible for storing an apple's location on the game board."""
+
     pass
 
 
-"""
-Responsible for executing the game.
-(Can split this as it grows larger; e.g., create a RenderGame class to
-display the game state, or a Board class.)
-"""
-
-
 class Game:
+    """
+    Responsible for executing the game. (Can split this as it grows larger; 
+    e.g., create a RenderGame class to display the game state, or a Board class.)
+    """
+
     def __init__(self, height, width):
         """Initializes the game."""
         self.height = height
