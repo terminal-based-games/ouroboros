@@ -3,6 +3,12 @@
 import curses
 
 
+"""
+Responsible for where the snake is located on the game board, 
+and which direction it is moving.
+"""
+
+
 class Snake:
     def __init__(self, body, direction):
         """Initializes the snake."""
@@ -21,6 +27,42 @@ class Snake:
         """Sets the snake's direction to the input value."""
         self.direction = direction
 
-    def head():
+    def head(self):
         """Returns the position of the snake's head (front of body)."""
         return self.body[-1]
+
+
+"""
+Responsible for storing an apple's location on the game board.
+"""
+
+
+class Apple:
+    pass
+
+
+"""
+Responsible for executing the game.
+(Can split this as it grows larger; e.g., create a RenderGame class to
+display the game state, or a Board class.)
+"""
+
+
+class Game:
+    def __init__(self, height, width):
+        """Initializes the game."""
+        self.height = height
+        self.width = width
+
+    def render(self):
+        print("Height: {}".format(self.height))
+        print("Width: {}".format(self.width))
+
+
+def main():
+    game = Game(10, 20)
+    game.render()
+
+
+if __name__ == "__main__":
+    main()
