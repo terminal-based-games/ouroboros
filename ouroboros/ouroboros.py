@@ -11,10 +11,13 @@ class Apple:
     def __init__(self):
         """Initializes the Apple class."""
 
-    def init_apple(self, snake):
+    def get_apple(self, snake):
+        """Returns random coordinates representing an apple's placement on the game board."""
         apple = []
+        width = Board.width - 2
+        height = Board.height - 2
         while apple == []:
-            apple = [[randint(1, 28), randint(1, 68)]]
+            apple = [[randint(1, height), randint(1, width)]]
             # If apple coordinates are in snake's coordinates, start over
             if apple in snake:
                 apple = []
@@ -29,8 +32,11 @@ class Snake:
     def __init__(self):
         """Initializes the Snake class."""
 
-    def init_snake(self):
-        snake = [[randint(1, 28), randint(1, 68)]]
+    def get_snake(self):
+        """Returns random coordinates representing a snake's placement on the game board."""
+        width = Board.width - 2
+        height = Board.height - 2
+        snake = [[randint(1, height), randint(1, width)]]
         return snake
 
     def move_across_edges(self, snake):
@@ -38,16 +44,16 @@ class Snake:
         # Snake will enter opposite side of screen if it moves across the edge
         # Moves through top edge
         if snake[0][0] == 0:
-            snake[0][0] = 28
-        # Moves through right edge
-        if snake[0][1] == 69:
-            snake[0][1] = 1
-        # Moves through bottom edge
-        if snake[0][0] == 29:
-            snake[0][0] = 1
+            snake[0][0] = Board.height - 2
         # Moves through left edge
         if snake[0][1] == 0:
-            snake[0][1] = 68
+            snake[0][1] = Board.width - 2
+        # Moves through bottom edge
+        if snake[0][0] == (Board.height - 1):
+            snake[0][0] = 1
+        # Moves through right edge
+        if snake[0][1] == (Board.width - 1):
+            snake[0][1] = 1
         return snake
 
     def move(self, snake, key, window):
@@ -59,7 +65,6 @@ class Snake:
                 snake[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
             ],
         )
-        self.move_across_edges(snake)
         return snake
 
     def run_over_self(self, snake):
@@ -93,10 +98,9 @@ class Board:
     """Responsible for game board (terminal window) setup."""
 
     def __init__(self, height, width, begin_y, begin_x):
-        """Initializes the game."""
-        # Initialize a new window
-        self.height = height
-        self.width = width
+        """Initializes the Board class."""
+        Board.height = height
+        Board.width = width
         self.begin_y = begin_y
         self.begin_x = begin_x
 
@@ -176,22 +180,17 @@ class Game:
                     key = prev_key
 
                 # Calculate coordinates of snake
-                s = Snake()
-                snake = s.move(snake, key, window)
+                snake = Snake().move(snake, key, window)
+                # Enable snake to move across game board edges
+                Snake().move_across_edges(snake)
 
                 # Game over if snake runs over itself
-                game_over = s.run_over_self(snake)
+                game_over = Snake().run_over_self(snake)
 
                 # Snake ate apple
                 if snake[0] == apple[0]:
-                    apple = []
                     score += 1
-                    while apple == []:
-                        # Generate random coordinates for the apple
-                        apple = [[randint(1, 28), randint(1, 68)]]
-                        # If apple coordinates are in snake's coordinates, start over
-                        if apple in snake:
-                            apple = []
+                    apple = Apple().get_apple(snake)
                     # Paint a "*" character at the given (y, x) coordinates to display an apple
                     window.addch(apple[0][0], apple[0][1], "*")
                 else:
@@ -207,23 +206,19 @@ class Game:
 def main():
     # Variables for new game
     height = 30
-    width = 70
+    width = 115
     begin_y = 0
     begin_x = 0
-
-    # Set initial coordinates for snake and apple
-    s = Snake()
-    a = Apple()
-    snake = s.init_snake()
-    apple = a.init_apple(snake)
     # Set game score to zero
     score = 0
 
     # Set up new game
     board = Board(height, width, begin_y, begin_x)
+    # Set initial coordinates for snake and apple
+    snake = Snake().get_snake()
+    apple = Apple().get_apple(snake)
     window = board.render(snake, apple)
-    game = Game()
-    game.play(snake, apple, score, window)
+    Game().play(snake, apple, score, window)
 
 
 if __name__ == "__main__":
