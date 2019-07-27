@@ -20,7 +20,7 @@ apple = [[11, 29]]
 
 class Snake:
     """
-    Responsible for handling the snake moving on the game board, 
+    Responsible for handling the snake moving on the game board. 
     """
 
     def __init__(self):
@@ -52,16 +52,16 @@ class Snake:
             ],
         )
         # Snake will enter opposite side of screen if it moves across the edge
-        # Moves through top border
+        # Moves through top edge
         if snake[0][0] == 0:
             snake[0][0] = 28
-        # Moves through right border
+        # Moves through right edge
         if snake[0][1] == 68:
             snake[0][1] = 1
-        # Moves through bottom border
+        # Moves through bottom edge
         if snake[0][0] == 28:
             snake[0][0] = 1
-        # Moves through left border
+        # Moves through left edge
         if snake[0][1] == 0:
             snake[0][1] = 68
 
