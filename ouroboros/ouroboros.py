@@ -212,8 +212,10 @@ def main():
     begin_x = 0
 
     # Set initial coordinates for snake and apple
-    snake = [[5, 5]]
-    apple = [[5, 15]]
+    s = Snake()
+    a = Apple()
+    snake = s.init_snake()
+    apple = a.init_apple(snake)
     # Set game score to zero
     score = 0
 
