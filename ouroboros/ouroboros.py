@@ -86,7 +86,9 @@ class Snake:
                 if apple in snake:
                     apple = []
             # Paint a "*" character at the given (y, x) coordinates to display an apple
+            window.attrset(curses.color_pair(2))
             window.addch(apple[0][0], apple[0][1], "*")
+            window.attrset(curses.color_pair(1))
         else:
             last = snake.pop()  # Decrease snake length
             window.addch(last[0], last[1], " ")
@@ -108,6 +110,10 @@ class Board:
         """Initializes curses and window (game board) settings."""
         # Set up curses
         curses.initscr()  # Initialize curses
+        curses.start_color() # Initialize color
+        curses.use_default_colors() 
+        curses.init_pair(1, curses.COLOR_GREEN, -1)
+        curses.init_pair(2, curses.COLOR_RED, -1)
         curses.noecho()  # Turn off automatic echoing of keys to the screen
         curses.cbreak()  # Enable application to react to keys instantly
         curses.curs_set(0)  # Disable cursor
@@ -118,6 +124,7 @@ class Board:
         window.nodelay(1)
         window.border(0)
         window.timeout(520)
+        window.bkgd(" ", curses.color_pair(1))
 
         return window
 
@@ -127,7 +134,9 @@ class Board:
         # Snake is represented by an "o" character
         window.addch(snake[0][0], snake[0][1], "o")
         # Apple is represented by an "*" character
+        window.attrset(curses.color_pair(2))
         window.addch(apple[0][0], apple[0][1], "*")
+        window.attrset(curses.color_pair(1))
 
         return window
 
@@ -164,7 +173,7 @@ class Game:
 
             # Key 27 = ESC
             while key != 27 and game_over == False:
-                window.addstr(0, 2, " Score: " + str(score) + " ")
+                window.addstr(0, 2, " Score: " + str(score) + " ", curses.color_pair(1))
 
                 prev_key = key
                 # getch() refreshes the screen and waits for the user to hit a key
@@ -192,7 +201,9 @@ class Game:
                     score += 1
                     apple = Apple().get_apple(snake)
                     # Paint a "*" character at the given (y, x) coordinates to display an apple
+                    window.attrset(curses.color_pair(2))
                     window.addch(apple[0][0], apple[0][1], "*")
+                    window.attrset(curses.color_pair(1))
                 else:
                     last = snake.pop()
                     window.addch(last[0], last[1], " ")
@@ -209,7 +220,6 @@ def main():
     width = 115
     begin_y = 0
     begin_x = 0
-    # Set game score to zero
     score = 0
 
     # Set up new game
