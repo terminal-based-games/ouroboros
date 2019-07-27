@@ -43,7 +43,7 @@ class Snake:
 
     def move(self, snake, key, symbol, window):
         """Moves snake on the game board."""
-        # Calculates the new coordinates of the head of the snake
+        # Calculates the new coordinates and increases length of snake at the head
         snake.insert(
             0,
             [
@@ -51,15 +51,16 @@ class Snake:
                 snake[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
             ],
         )
+
         # Snake will enter opposite side of screen if it moves across the edge
         # Moves through top edge
         if snake[0][0] == 0:
             snake[0][0] = 28
         # Moves through right edge
-        if snake[0][1] == 68:
+        if snake[0][1] == 59:
             snake[0][1] = 1
         # Moves through bottom edge
-        if snake[0][0] == 28:
+        if snake[0][0] == 29:
             snake[0][0] = 1
         # Moves through left edge
         if snake[0][1] == 0:
