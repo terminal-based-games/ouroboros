@@ -31,36 +31,41 @@ class Snake:
         y_difference = snake[0] - apple[0]
         x_difference = snake[1] - apple[1]
         if abs(x_difference) >= abs(y_difference):
-            if y_difference < 0:
-                return KEY_UP
+            if x_difference < 0:
+                return KEY_RIGHT
             else:
-                return KEY_DOWN
+                return KEY_LEFT
+        else:
             if x_difference < 0:
                 return KEY_DOWN
             else:
                 return KEY_UP
 
-    def move(self, obj, key, symbol, window):
+    def move(self, snake, key, symbol, window):
         """Moves snake on the game board."""
         # Calculates the new coordinates of the head of the snake
-        obj.insert(
+        snake.insert(
             0,
             [
-                obj[0][0] + (key == KEY_DOWN and 1) + (key == KEY_UP and -1),
-                obj[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
+                snake[0][0] + (key == KEY_DOWN and 1) + (key == KEY_UP and -1),
+                snake[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
             ],
         )
         # Snake will enter opposite side of screen if it moves across the edge
-        if obj[0][0] == 0:
-            obj[0][0] = 28
-        if obj[0][1] == 0:
-            obj[0][1] = 68
-        if obj[0][0] == 0:
-            obj[0][0] = 1
-        if obj[0][1] == 0:
-            obj[0][1] = 1
+        # Moves through top border
+        if snake[0][0] == 0:
+            snake[0][0] = 28
+        # Moves through right border
+        if snake[0][1] == 68:
+            snake[0][1] = 1
+        # Moves through bottom border
+        if snake[0][0] == 28:
+            snake[0][0] = 1
+        # Moves through left border
+        if snake[0][1] == 0:
+            snake[0][1] = 68
 
-        return obj
+        return snake
 
 
 class Apple:
