@@ -147,72 +147,57 @@ class Game:
 
                 # Pause the game if space bar is pressed;
                 # Resume game if space bar is pressed again
-                if key == ord(" "):
-                    key = -1
-                    while key != ord(" "):
-                        key = window.getch()
-                    key = prev_key
-                    continue
+                self.pause(key, prev_key, window)
 
                 # If an invalid key is pressed, do nothing
                 if key not in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, 27]:
                     key = prev_key
 
-                snake = s.move(snake, key, "o", window)
+                s = Snake()
+                snake = s.move(snake, key, window)
+
                 # Game over if snake runs over itself
-                if snake[0] in snake[1:]:
-                    game_over = True
+                game_over = s.run_over_self(snake)
 
-                # Snake eats an apple
+                # Snake ate apple
                 if snake[0] == apple[0]:
                     apple = []
                     score += 1
                     while apple == []:
+                        # Generate random coordinates for the apple
                         apple = [[randint(1, 28), randint(1, 68)]]
+                        # If apple coordinates are in snake's coordinates, start over
                         if apple in snake:
                             apple = []
-                    try:
-                        window.addch(apple[0][0], apple[0][1], "*")
-                    except (curses.error):
-                        pass
-                else:
-                    try:
-                        last = snake.pop()  # decrease snake length
-                        window.addch(last[0], last[1], " ")
-                    except (curses.error):
-                        pass
-                try:
-                    window.addch(snake[0][0], snake[0][1], "o")
-                except (curses.error):
-                    pass
-
-                move_apple = self.next_move(snake[0], apple[0])
-
-                apple = a.move(apple, move_apple, "*", window)
-
-                # Snake eats apple
-                if snake[0] == apple[0]:
-                    apple = []
-                    score += 1
-                    while apple == []:
-                        apple = [[randint(1, 28), randint(1, 68)]]
-                        if apple in snake:
-                            apple = []
+                    # Paint a "*" character at the given (y, x) coordinates to display an apple
                     window.addch(apple[0][0], apple[0][1], "*")
+                else:
+                    last = snake.pop()
+                    window.addch(last[0], last[1], " ")
+                # Snake ate apple, increase its length
+                window.addch(snake[0][0], snake[0][1], "o")
 
         finally:
-            # Terminate a curses application
-            curses.nocbreak()
-            curses.echo()
-            curses.endwin()
+            self.terminate_curses()
 
 
 def main():
+    # Variables for new game
+    height = 30
+    width = 70
+    begin_y = 0
+    begin_x = 0
+
+    # Set initial coordinates for snake and apple
+    snake = [[5, 5]]
+    apple = [[5, 15]]
+    # Set game score to zero
+    score = 0
 
     # Set up new game
     game = Game(height, width, begin_y, begin_x)
-    window = game.render()
-    game.play(window)
+    window = game.render(snake, apple)
+    game.play(snake, apple, score, window)
 
 
 if __name__ == "__main__":
