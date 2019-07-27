@@ -29,6 +29,10 @@ class Snake:
     def __init__(self):
         """Initializes the Snake class."""
 
+    def init_snake(self):
+        snake = [[randint(1, 28), randint(1, 68)]]
+        return snake
+
     def move_across_edges(self, snake):
         """Enables snake to move across the edges of the game's window."""
         # Snake will enter opposite side of screen if it moves across the edge
