@@ -20,32 +20,8 @@ class Snake:
     def __init__(self):
         """Initializes the snake."""
 
-    def get_direction(self, snake, apple):
-        """Gets the direction of the snake."""
-        y_difference = snake[0] - apple[0]
-        x_difference = snake[1] - apple[1]
-        if abs(x_difference) >= abs(y_difference):
-            if x_difference < 0:
-                return KEY_RIGHT
-            else:
-                return KEY_LEFT
-        else:
-            if x_difference < 0:
-                return KEY_DOWN
-            else:
-                return KEY_UP
-
-    def move(self, snake, key, symbol, window):
-        """Moves snake on the game board."""
-        # Calculates the new coordinates and increases length of snake at the head
-        snake.insert(
-            0,
-            [
-                snake[0][0] + (key == KEY_DOWN and 1) + (key == KEY_UP and -1),
-                snake[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
-            ],
-        )
-
+    def move_across_edges(self, snake):
+        """Enables snake to move across the edges of the game's window."""
         # Snake will enter opposite side of screen if it moves across the edge
         # Moves through top edge
         if snake[0][0] == 0:
