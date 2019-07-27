@@ -11,6 +11,15 @@ class Apple:
     def __init__(self):
         """Initializes the Apple class."""
 
+    def init_apple(self, snake):
+        apple = []
+        while apple == []:
+            apple = [[randint(1, 28), randint(1, 68)]]
+            # If apple coordinates are in snake's coordinates, start over
+            if apple in snake:
+                apple = []
+        return apple
+
 
 class Snake:
     """
