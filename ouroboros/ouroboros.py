@@ -35,26 +35,45 @@ class Snake:
         # Moves through left edge
         if snake[0][1] == 0:
             snake[0][1] = 68
-
         return snake
 
-
-class Apple:
-    """Responsible for an apple's location on the game board."""
-
-    def __init__(self):
-        """Initializes the apple."""
-
-    def move(self, obj, key, symbol, window):
-        """Moves an apple on the game board."""
-        obj.insert(
+    def move(self, snake, key, window):
+        """Calculates the new coordinates of the snake on the game board."""
+        snake.insert(
             0,
             [
-                obj[0][0] + (key == KEY_DOWN and 1) + (key == KEY_UP and -1),
-                obj[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
+                snake[0][0] + (key == KEY_DOWN and 1) + (key == KEY_UP and -1),
+                snake[0][1] + (key == KEY_LEFT and -1) + (key == KEY_RIGHT and 1),
             ],
         )
-        return obj
+        self.move_across_edges(snake)
+        return snake
+
+    def run_over_self(self, snake):
+        """If snake runs over itself, the game is over."""
+        if snake[0] in snake[1:]:
+            return True
+        else:
+            return False
+
+    def eat_apple(self, snake, apple, score, window):
+        """Handles operations that occur when the snake eats an apple. (Not currently used.)"""
+        if snake[0] == apple[0]:
+            apple = []
+            score += 1
+            while apple == []:
+                # Generate random coordinates for the apple
+                apple = [[randint(1, 28), randint(1, 68)]]
+                # If apple coordinates are in snake's coordinates, start over
+                if apple in snake:
+                    apple = []
+            # Paint a "*" character at the given (y, x) coordinates to display an apple
+            window.addch(apple[0][0], apple[0][1], "*")
+        else:
+            last = snake.pop()  # decrease snake length
+            window.addch(last[0], last[1], " ")
+        window.addch(snake[0][0], snake[0][1], "o")
+        return score
 
 
 class Game:
