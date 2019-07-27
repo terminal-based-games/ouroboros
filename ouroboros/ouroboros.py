@@ -70,7 +70,7 @@ class Snake:
             # Paint a "*" character at the given (y, x) coordinates to display an apple
             window.addch(apple[0][0], apple[0][1], "*")
         else:
-            last = snake.pop()  # decrease snake length
+            last = snake.pop()  # Decrease snake length
             window.addch(last[0], last[1], " ")
         window.addch(snake[0][0], snake[0][1], "o")
         return score
