@@ -74,27 +74,6 @@ class Snake:
         else:
             return False
 
-    def eat_apple(self, snake, apple, score, window):
-        """Handles operations that occur when the snake eats an apple. (Not currently used.)"""
-        if snake[0] == apple[0]:
-            apple = []
-            score += 1
-            while apple == []:
-                # Generate random coordinates for the apple
-                apple = [[randint(1, 28), randint(1, 68)]]
-                # If apple coordinates are in snake's coordinates, start over
-                if apple in snake:
-                    apple = []
-            # Paint a "*" character at the given (y, x) coordinates to display an apple
-            window.attrset(curses.color_pair(2))
-            window.addch(apple[0][0], apple[0][1], "*")
-            window.attrset(curses.color_pair(1))
-        else:
-            last = snake.pop()  # Decrease snake length
-            window.addch(last[0], last[1], " ")
-        window.addch(snake[0][0], snake[0][1], "o")
-        return score
-
 
 class Board:
     """Responsible for game board (terminal window) setup."""
