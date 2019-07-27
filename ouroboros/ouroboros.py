@@ -40,7 +40,7 @@ class Snake:
         if snake[0][0] == 0:
             snake[0][0] = 28
         # Moves through right edge
-        if snake[0][1] == 59:
+        if snake[0][1] == 69:
             snake[0][1] = 1
         # Moves through bottom edge
         if snake[0][0] == 29:
