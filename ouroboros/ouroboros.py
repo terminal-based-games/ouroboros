@@ -89,21 +89,25 @@ class Board:
         """Initializes curses and window (game board) settings."""
         # Set up curses
         curses.initscr()  # Initialize curses
-        curses.start_color() # Initialize color
-        curses.use_default_colors() # Allow default color values 
-        curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK) # Change definition of color pair
+        curses.start_color()  # Initialize color
+        curses.use_default_colors()  # Allow default color values
+        curses.init_pair(
+            1, curses.COLOR_GREEN, curses.COLOR_BLACK
+        )  # Change definition of color pair
         curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
         curses.noecho()  # Turn off automatic echoing of keys to the screen
         curses.cbreak()  # Enable application to react to keys instantly
         curses.curs_set(0)  # Disable cursor
 
         # Initialize a new window
-        window = curses.newwin(self.height, self.width, self.begin_y, self.begin_x) # Return a new window
-        window.keypad(1) # Keypad will be interpreted by curses
-        window.nodelay(1) # getch() will be non-blocking
-        window.border(0) # Default border
-        window.timeout(220) # getch() will block delay for number of milliseconds given
-        window.bkgd(" ", curses.color_pair(1) | curses.A_BOLD) # Set window attributes
+        window = curses.newwin(
+            self.height, self.width, self.begin_y, self.begin_x
+        )  # Return a new window
+        window.keypad(1)  # Keypad will be interpreted by curses
+        window.nodelay(1)  # getch() will be non-blocking
+        window.border(0)  # Default border
+        window.timeout(220)  # getch() will block delay for number of milliseconds given
+        window.bkgd(" ", curses.color_pair(1) | curses.A_BOLD)  # Set window attributes
 
         return window
 
