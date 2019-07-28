@@ -1,4 +1,4 @@
-# OpenOuroboros
+# Ouroboros
 > A terminal-based game inspired by Snake.
 
 [![Build Status](https://travis-ci.com/terminal-based-games/ouroboros.svg?branch=master)](https://travis-ci.com/terminal-based-games/ouroboros)
@@ -34,7 +34,7 @@ $ python3 ouroboros.py
 
 ## Demo
 
-![](images/ouroboros_prototype.gif)
+![Snake Demo](http://www.giphy.com/gifs/UWEaQ317JbjbEgg2kt)
 
 ## Technology
 
