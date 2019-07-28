@@ -191,19 +191,21 @@ class Game:
 
 
 def main():
-    # Variables for new game
+    # Initial game values
     height = 25
     width = 75
     begin_y = 0
     begin_x = 0
     score = 0
 
-    # Set up new game
+    # Initialize game board
     board = Board(height, width, begin_y, begin_x)
     # Set initial coordinates for snake and apple
     snake = Snake().get_snake()
     apple = Apple().get_apple(snake)
+    # Initialize window (terminal screen)
     window = board.render(snake, apple)
+    # Play game!
     Game().play(snake, apple, score, window)
 
 
