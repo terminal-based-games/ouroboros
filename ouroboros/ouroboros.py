@@ -102,7 +102,7 @@ class Board:
         window.keypad(1) # Keypad will be interpreted by curses
         window.nodelay(1) # getch() will be non-blocking
         window.border(0) # Default border
-        window.timeout(520) # getch() will block delay for number of milliseconds given
+        window.timeout(220) # getch() will block delay for number of milliseconds given
         window.bkgd(" ", curses.color_pair(1) | curses.A_BOLD) # Set window attributes
 
         return window
