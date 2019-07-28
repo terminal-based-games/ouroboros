@@ -26,6 +26,8 @@ $ python3 ouroboros.py
 
 ## Play
 
+*Objective:* Eat as many apples as you can without running into yourself.
+
 *Move:* Use the arrow keys on your keyboard to move the snake (that's you!) into any apples that appear. The goal is to eat as many as you can without running into yourself. With each apple, the snake grows a bit in length.
 
 *Pause:* Hit the space bar to pause the game, and hit the space bar again to resume.
@@ -34,7 +36,7 @@ $ python3 ouroboros.py
 
 ## Demo
 
-![Snake Demo](http://www.giphy.com/gifs/UWEaQ317JbjbEgg2kt)
+![Snake Demo](https://media.giphy.com/media/UWEaQ317JbjbEgg2kt/giphy.gif)
 
 ## Technology
 
