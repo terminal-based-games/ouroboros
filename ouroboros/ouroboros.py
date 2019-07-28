@@ -108,6 +108,7 @@ class Board:
         window.border(0)  # Default border
         window.timeout(220)  # getch() will block delay for number of milliseconds given
         window.bkgd(" ", curses.color_pair(1) | curses.A_BOLD)  # Set window attributes
+        window.addstr(window.getmaxyx()[0]-1, 2, "Press ESC to exit")
 
         return window
 
@@ -155,7 +156,7 @@ class Game:
             # Key 27 = ESC
             while key != 27 and game_over == False:
                 # Displays the user's current score
-                window.addstr(0, 2, " Score: " + str(score) + " ", curses.color_pair(1))
+                window.addstr(0, window.getmaxyx()[1]-12, " Score: " + str(score) + " ", curses.color_pair(1))
 
                 prev_key = key
                 # getch() refreshes the screen and waits for the user to hit a key
