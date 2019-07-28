@@ -36,7 +36,7 @@ $ python3 ouroboros.py
 
 ## Demo
 
-![Snake Demo](https://media.giphy.com/media/UWEaQ317JbjbEgg2kt/giphy.gif)
+![Snake Demo](https://media.giphy.com/media/MdGrSYHxXItqPhXukM/giphy.gif)
 
 ## Technology
 
