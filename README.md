@@ -6,7 +6,7 @@
 
 "Snake" is a game that was preloaded on Nokia phones in 1997. A single player controls a square, which continually grows as it moves, resembling a snake. The objective of the game is to get the snake to eat items (by running into food objects) without running into the border of the screen, any obstacles, or itself. 
 
-## Installation
+## Build & Run
 
 OS X & Linux:
 ```sh
@@ -26,12 +26,20 @@ $ python3 ouroboros.py
 
 ## Play
 
+*Move:* Use the arrow keys on your keyboard to move the snake (that's you!) into any apples that appear. The goal is to eat as many as you can without running into yourself. With each apple, the snake grows a bit in length.
+
+*Pause:* Hit the space bar to pause the game, and hit the space bar again to resume.
+
+*Exit:* Press the Escape key at any time to exit the game. 
+
 ## Demo
-_A demo or prototype should be completed by July 9, 2019._
+
+![](images/ouroboros_prototype.gif)
 
 ## Technology
 
 * Python 3.7
+* curses 
 
 ## Roadmap 
 
