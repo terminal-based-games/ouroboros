@@ -64,11 +64,13 @@ Our minimum viable product is a functional terminal-based game of Snake. This wi
 
 ## Contribute
 
-Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
+Interested in contributing to this project? We'd love to have you! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
+
+We welcome developers of any background and skill level. :seedling:
 
 ## Testing
 
-To run all unit tests, you can enter the following command:
+Enter the following command to run unit tests:
 
 ```
 pytest
@@ -78,9 +80,11 @@ pytest
 
 ## Built By
 
-Mack Cooper | [@mackkcooper](https://github.com/mackkcooper)
+* **Mack Cooper** - [@mackkcooper](https://github.com/mackkcooper)
 
-Carissa Allen | [@carissaallen](https://github.com/carissaallen)
+* **Carissa Allen** - [@carissaallen](https://github.com/carissaallen)
+
+All contributors who participate in this project will be recognized here.
 
 ## License
 Distributed under the MIT License. See [LICENSE](/LICENSE) for more information.
