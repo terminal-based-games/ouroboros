@@ -1,4 +1,4 @@
-# Contributing to OpenOuroboros
+# Contributing to Ouroboros
 
 Thank you for taking the time to contribute! :tada:
 
