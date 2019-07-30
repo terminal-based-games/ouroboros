@@ -145,13 +145,13 @@ class Game:
     def check180(self, key, prev_key):
         """Checks to see if the snake is trying to perform a 180;
         Returns true if it is, else false"""
-        if (key == KEY_LEFT and prev_key == KEY_RIGHT):
+        if key == KEY_LEFT and prev_key == KEY_RIGHT:
             return True
-        if (key == KEY_RIGHT and prev_key == KEY_LEFT):
+        if key == KEY_RIGHT and prev_key == KEY_LEFT:
             return True
-        if (key == KEY_UP and prev_key == KEY_DOWN):
+        if key == KEY_UP and prev_key == KEY_DOWN:
             return True
-        if (key == KEY_DOWN and prev_key == KEY_UP):
+        if key == KEY_DOWN and prev_key == KEY_UP:
             return True
         return False
 
