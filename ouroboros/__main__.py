@@ -12,12 +12,12 @@ class Apple:
         """Initializes the Apple class."""
 
     def get_apple(self, snake):
-        """Returns random coordinates representing an apple's placement on the game board."""
+        """Returns random coordinates representing an apple's placement on the game board. These coordinates will not overlap with the snake coordinates."""
         apple = []
         width = Board.width - 2
         height = Board.height - 2
         while apple == []:
-            apple = [[randint(1, height), randint(1, width)]]
+            apple = [randint(1, height), randint(1, width)]
             # If apple coordinates are in snake's coordinates, start over
             if apple in snake:
                 apple = []
@@ -25,9 +25,7 @@ class Apple:
 
 
 class Snake:
-    """
-    Responsible for handling the snake moving on the game board. 
-    """
+    """Responsible for handling the snake moving on the game board."""
 
     def __init__(self):
         """Initializes the Snake class."""
@@ -91,9 +89,8 @@ class Board:
         curses.initscr()  # Initialize curses
         curses.start_color()  # Initialize color
         curses.use_default_colors()  # Allow default color values
-        curses.init_pair(
-            1, curses.COLOR_GREEN, curses.COLOR_BLACK
-        )  # Change definition of color pair
+        # Change definition of color pair
+        curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
         curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
         curses.noecho()  # Turn off automatic echoing of keys to the screen
         curses.cbreak()  # Enable application to react to keys instantly
@@ -118,23 +115,22 @@ class Board:
         # Snake is represented by an "o" character
         window.addch(snake[0][0], snake[0][1], "o")
         # Apple is represented by an "*" character
-        window.addch(apple[0][0], apple[0][1], "*", curses.color_pair(2))
+        window.addch(apple[0], apple[1], "*", curses.color_pair(2))
 
         return window
 
 
 class Game:
-    """
-    Responsible for executing the game.
-    """
+    """Responsible for executing the game."""
 
     def __init__(self):
-        """Initializes the game."""
+        """Initializes the Game class."""
 
     def pause(self, key, prev_key, window):
         """Pauses game if the space bar is pressed; resumes game if pressed again."""
         if key == ord(" "):
             key = -1
+            # loop waiting to unpause when space bar is pressed again
             while key != ord(" "):
                 key = window.getch()
             key = prev_key
@@ -185,11 +181,11 @@ class Game:
                 game_over = Snake().run_over_self(snake)
 
                 # Snake ate apple
-                if snake[0] == apple[0]:
+                if snake[0] == apple:
                     score += 1
                     apple = Apple().get_apple(snake)
                     # Paint a "*" character at the given (y, x) coordinates to display an apple
-                    window.addch(apple[0][0], apple[0][1], "*", curses.color_pair(2))
+                    window.addch(apple[0], apple[1], "*", curses.color_pair(2))
                 else:
                     last = snake.pop()
                     window.addch(last[0], last[1], " ")
