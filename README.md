@@ -23,6 +23,11 @@ $ cd [package location]        # Go to directory containing package
 $ python3 __main__.py          # Run the game
 ```
 
+Upgrade:
+```sh
+$ pip3 install --upgrade open-ouroboros
+```
+
 ## Play
 
 **Objective:** Eat as many apples as you can without running into yourself.
