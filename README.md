@@ -7,14 +7,6 @@
 
 ## Build & Run
 
-OS X & Linux:
-```sh
-$ pip3 install -r requirements.txt
-$ git clone https://github.com/terminal-based-games/ouroboros.git
-$ cd ouroboros
-$ python3 ouroboros.py          # Run the game
-```
-
 Install:
 ```sh
 $ pip3 install open-ouroboros
