@@ -12,15 +12,15 @@ OS X & Linux:
 $ pip3 install -r requirements.txt
 $ git clone https://github.com/terminal-based-games/ouroboros.git
 $ cd ouroboros
-$ python3 ouroboros.py
+$ python3 ouroboros.py         # Run the game
 ```
 
-Windows:
+Install:
 ```sh
-$ pip3 install -r requirements.txt
-$ git clone https://github.com/terminal-based-games/ouroboros.git
-$ cd ouroboros
-$ python3 ouroboros.py
+$ pip3 install open-ouroboros
+$ pip3 show open-ouroboros     # Provides location of installed package
+$ cd [package location]        # Go to directory containing package
+$ python3 __main__.py          # Run the game
 ```
 
 ## Play
