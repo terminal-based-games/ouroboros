@@ -1,12 +1,11 @@
-# OpenOuroboros
+# Ouroboros
 > A terminal-based game inspired by Snake.
 
 [![Build Status](https://travis-ci.com/terminal-based-games/ouroboros.svg?branch=master)](https://travis-ci.com/terminal-based-games/ouroboros)
-[![HitCount](http://hits.dwyl.com/terminal-based-games/ouroboros.svg)](http://hits.dwyl.com/terminal-based-games/ouroboros)
 
 "Snake" is a game that was preloaded on Nokia phones in 1997. A single player controls a square, which continually grows as it moves, resembling a snake. The objective of the game is to get the snake to eat items (by running into food objects) without running into the border of the screen, any obstacles, or itself. 
 
-## Installation
+## Build & Run
 
 OS X & Linux:
 ```sh
@@ -26,12 +25,22 @@ $ python3 ouroboros.py
 
 ## Play
 
+**Objective:** Eat as many apples as you can without running into yourself.
+
+**Move:** Use the arrow keys on your keyboard to move the snake (that's you!) into any apples that appear. The goal is to eat as many as you can without running into yourself. With each apple, the snake grows a bit in length.
+
+**Pause:** Hit the space bar to pause the game, and hit the space bar again to resume.
+
+**Exit:** Press the Escape key at any time to exit the game. 
+
 ## Demo
-_A demo or prototype should be completed by July 9, 2019._
+
+![Snake Demo](https://media.giphy.com/media/MdGrSYHxXItqPhXukM/giphy.gif)
 
 ## Technology
 
 * Python 3.7
+* curses 
 
 ## Roadmap 
 
@@ -55,11 +64,13 @@ Our minimum viable product is a functional terminal-based game of Snake. This wi
 
 ## Contribute
 
-Thank you for taking the time to contribute! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
+Interested in contributing to this project? We'd love to have you! Please take a moment to review our [guide to contributing](/CONTRIBUTING.md) before getting started. 
+
+We welcome developers of any background and skill level. :seedling:
 
 ## Testing
 
-To run all unit tests, you can enter the following command:
+Enter the following command to run unit tests:
 
 ```
 pytest
@@ -69,9 +80,11 @@ pytest
 
 ## Built By
 
-Mack Cooper | [@mackkcooper](https://github.com/mackkcooper)
+* **Mack Cooper** - [@mackkcooper](https://github.com/mackkcooper)
 
-Carissa Allen | [@carissaallen](https://github.com/carissaallen)
+* **Carissa Allen** - [@carissaallen](https://github.com/carissaallen)
+
+All contributors who participate in this project will be recognized here.
 
 ## License
 Distributed under the MIT License. See [LICENSE](/LICENSE) for more information.
