@@ -72,6 +72,19 @@ class Snake:
         else:
             return False
 
+    def check180(self, key, prev_key):
+        """Checks to see if the snake is trying to perform a 180;
+        Returns true if it is, else false"""
+        if key == KEY_LEFT and prev_key == KEY_RIGHT:
+            return True
+        if key == KEY_RIGHT and prev_key == KEY_LEFT:
+            return True
+        if key == KEY_UP and prev_key == KEY_DOWN:
+            return True
+        if key == KEY_DOWN and prev_key == KEY_UP:
+            return True
+        return False
+
 
 class Board:
     """Responsible for game board (terminal window) setup."""
@@ -170,6 +183,8 @@ class Game:
 
                 # If an invalid key is pressed, do nothing
                 if key not in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, 27]:
+                    key = prev_key
+                if Snake().check180(key, prev_key):
                     key = prev_key
 
                 # Calculate coordinates of snake
