@@ -41,13 +41,13 @@ For more information, you can read the documentation for [windows-curses 2.0](ht
 ## Install & Run
 
 ```sh
-pip3 install open-ouroboros
-ouroboros                     # Run the game
+$ pip3 install open-ouroboros
+$ ouroboros                     # Run the game
 ```
 
 **Upgrade:**
 ```sh
-pip3 install --upgrade open-ouroboros
+$ pip3 install --upgrade open-ouroboros
 ```
 
 ## Play
