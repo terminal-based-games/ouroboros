@@ -9,7 +9,7 @@
 * Ensure you can run Python 3 from the command line. You can check this by running:
 
 ```
-python3 --version
+python --version
 ```
 
 If you do not have Python 3 installed, go here: [Download the latest version of Python](https://www.python.org/downloads/)
@@ -17,7 +17,7 @@ If you do not have Python 3 installed, go here: [Download the latest version of 
 * Ensure you can run pip from the command line. You can check this by running:
 
 ```
-pip3 --version
+pip --version
 ```
 
 If you do not have pip installed, go here: [Installing pip with get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
@@ -25,19 +25,28 @@ If you do not have pip installed, go here: [Installing pip with get-pip.py](http
 * Ensure pip, setuptools, and wheel are up to date by running:
 
 ```
-python3 -m pip install --upgrade pip setuptools wheel
+python -m pip install --upgrade pip setuptools wheel
 ```
+
+**Windows:**
+In addition to the above requirements, please install the following curses package for Windows:
+
+```
+python -m pip install windows-curses
+```
+
+For more information, you can read the documentation for [windows-curses 2.0](https://pypi.org/project/windows-curses/).
 
 ## Install & Run
 
 ```sh
-$ pip3 install open-ouroboros
-$ ouroboros                     # Run the game
+pip3 install open-ouroboros
+ouroboros                     # Run the game
 ```
 
 **Upgrade:**
 ```sh
-$ pip3 install --upgrade open-ouroboros
+pip3 install --upgrade open-ouroboros
 ```
 
 ## Play
