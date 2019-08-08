@@ -29,6 +29,7 @@ python -m pip install --upgrade pip setuptools wheel
 ```
 
 **Windows:**
+
 In addition to the above requirements, please install the following curses package for Windows:
 
 ```
