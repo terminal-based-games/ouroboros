@@ -6,7 +6,37 @@
 "Snake" is a game that was preloaded on Nokia phones in 1997. A single player controls a square, which continually grows as it moves, resembling a snake. The objective of the game is to get the snake to eat items (by running into food objects) without running into the border of the screen, any obstacles, or itself. 
 
 ## Prerequisites
-* [pip](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
+* Ensure you can run Python 3 from the command line. You can check this by running:
+
+```
+python --version
+```
+
+If you do not have Python 3 installed, go here: [Download the latest version of Python](https://www.python.org/downloads/)
+
+* Ensure you can run pip from the command line. You can check this by running:
+
+```
+pip --version
+```
+
+If you do not have pip installed, go here: [Installing pip with get-pip.py](https://pip.pypa.io/en/stable/installing/#installing-with-get-pip-py)
+
+* Ensure pip, setuptools, and wheel are up to date by running:
+
+```
+python -m pip install --upgrade pip setuptools wheel
+```
+
+**Windows:**
+
+In addition to the above requirements, please install the following curses package for Windows:
+
+```
+python -m pip install windows-curses
+```
+
+For more information, you can read the documentation for [windows-curses 2.0](https://pypi.org/project/windows-curses/).
 
 ## Install & Run
 
