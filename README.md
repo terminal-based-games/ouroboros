@@ -104,6 +104,7 @@ pytest
 ```
 
 ## Credits
+* [Implementing Snake using OOP](https://robertheaton.com/2018/12/02/programming-project-5-snake/)
 
 ## Built By
 
