@@ -56,6 +56,19 @@ class Snake:
             snake[0][1] = 1
         return snake
 
+    def dies_if_hits_edge(self, snake):
+        """Ends the game if the snake hits the edges of the game's window."""
+        if snake[0][0] == 0:
+            return True
+        elif snake[0][1] == 0:
+            return True
+        elif snake[0][0] == (height - 1):
+            return True
+        elif snake[0][1] == (width - 1):
+            return True
+        else:
+            return False
+
     def move(self, snake, key, window):
         """Calculates the new coordinates of the snake on the game board."""
         snake.insert(
@@ -114,7 +127,7 @@ class Game:
             key = prev_key
             return key
 
-    def play(self):
+    def play(self, difficulty):
         """Primary controller to play the game of snake."""
         # Snake is represented by an "o" character
         snake = Snake().get_snake()
@@ -127,9 +140,10 @@ class Game:
         # Initial values
         key = KEY_RIGHT
         game_over = False
+        hit_edge = False
 
         # Key 27 = ESC
-        while key != 27 and game_over == False:
+        while key != 27 and game_over == False and hit_edge == False:
             # Displays the user's current score
             self.window.addstr(
                 0,
@@ -155,8 +169,12 @@ class Game:
 
             # Calculate coordinates of snake
             snake = Snake().move(snake, key, self.window)
-            # Enable snake to move across game board edges
-            Snake().move_across_edges(snake)
+            if difficulty == False:
+                # Enable snake to move across game board edges
+                Snake().move_across_edges(snake)
+            else:
+                # Game over if snake hits game board edge
+                hit_edge = Snake().dies_if_hits_edge(snake)
 
             # Game over if snake runs over itself
             game_over = Snake().run_over_self(snake)
@@ -172,6 +190,7 @@ class Game:
                 self.window.addch(last[0], last[1], " ")
             # Snake ate apple, increase its length
             self.window.addch(snake[0][0], snake[0][1], "o")
+
         self.window.timeout(-1)  # Window will now block delay instead of timing out
         subwin = self.window.subwin(9, 19, 8, 28)
         subwin.clear()
@@ -209,10 +228,9 @@ class WindowManager:
             " ", curses.color_pair(1) | curses.A_BOLD
         )  # Set window attributes
         main_menu.addstr(5, 33, "OUROBOROS", curses.A_UNDERLINE | curses.A_BLINK)
-        main_menu.addstr(10, 28, "Press ENTER to Play")
-        main_menu.addstr(12, 28, "Press ESC to Quit")
-        main_menu.addstr(20, 26, "Check us out on Github:")
-        main_menu.addstr(21, 12, "https://github.com/terminal-based-games/ouroboros/")
+        main_menu.addstr(10, 24, "Press ENTER to Play on EASY")
+        main_menu.addstr(12, 26, "Press + to Play on HARD")
+        main_menu.addstr(14, 29, "Press ESC to Exit")
         main_menu.refresh()
         self.main_menu = main_menu
 
@@ -220,8 +238,14 @@ class WindowManager:
         """Starts the main menu loop sequence."""
         while 1:
             keypress = self.main_menu.getch()
+            # Easy level
             if keypress == 10:  # ENTER pressed
-                Game().play()  # Starts a new game
+                Game().play(False)  # Starts a new game
+                self.main_menu.touchwin()  # Brings focus back to main menu
+                self.main_menu.refresh()
+            # Hard level
+            elif keypress == 43:
+                Game().play(True)  # Starts a new game
                 self.main_menu.touchwin()  # Brings focus back to main menu
                 self.main_menu.refresh()
             elif keypress == 27:  # ESC pressed
